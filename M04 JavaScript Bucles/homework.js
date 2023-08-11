@@ -110,14 +110,29 @@ function fizzBuzz(num) {
    return response;
 }
 
+// La función recibe tres números distintos.
 function operadoresLogicos(num1, num2, num3) {
-   // La función recibe tres números distintos.
    // Si num1 es mayor a num2 y a num3, y además es positivo, retornar ---> "Numero 1 es mayor y positivo".
    // Si alguno de los tres números es negativo, retornar ---> "Hay negativos".
    // Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
    // Si todos los argumentos son cero, retornar ---> "Error".
    // Si no se cumple ninguna de las condiciones anteriores, retornar false.
    // Tu código:
+   if (num1 === 0 && num2 === 0 && num3 === 0){
+      return "Error";
+   }
+   if (num1 < 0 || num2 < 0 || num3 < 0){
+      return "Hay negativos";
+
+   }
+   if (num1 > num2 && num1 > num3 ){
+      return "Numero 1 es mayor y positivo";
+   }
+   if (num3 > num1 && num3 > num2 ){
+      return num3+1;
+   }
+   return false;
+   
 }
 
 function esPrimo(num) {
@@ -127,18 +142,27 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
+   if (num < 2) return false;
+for (let i = 2; i < num; i++){
+if (num % i === 0){
+   return false;
+}
+}
+return true;
 }
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
+   return valor? "Soy verdadero":"Soy falso";
 }
 
 function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
+  return num > 99 && num < 999? true:false;
 }
 
 function doWhile(num) {
@@ -146,6 +170,12 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+   let count = 0;
+   do {
+       num += 5;
+      count++;
+   } while (count <8);
+return num;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
